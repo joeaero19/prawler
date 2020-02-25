@@ -17,10 +17,10 @@ sh "./prowler"
 pipeline {
     agent any
     stages {
-        stage('hello AWS') {
+        stage('run_prowler') {
             steps {
                 withAWS(credentials: 'AWS_CREDENTIALS', region: 'us-east-1') {
-                    sh 'echo "./prowler'
+                    sh './prowler'
                     
                 }
             }
